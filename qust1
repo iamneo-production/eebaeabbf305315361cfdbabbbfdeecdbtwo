@@ -11,6 +11,9 @@ provider "aws"{
     secret_key="nJ9IgxxMFy2bq28XRnIe6JCb3j2CRvGiJbM6QX9D"
 }
 resource "aws_instance" "linux_server"{
-    ami          ="SUSE Linux Enterprise Server 12 SP5"
-    instance_type =
+    ami           ="SUSE Linux Enterprise Server 12 SP5"
+    instance_type ="t2.micro"
+}
+output "public_ip"{
+    value=aws_instance.demo_instance.ublic_ip
 }
